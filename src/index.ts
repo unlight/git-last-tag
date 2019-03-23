@@ -1,13 +1,22 @@
-/**
- * Hello function whithout parameter
- * @returns result string
- */
-export function hello(): string;
+import { execSync } from 'child_process';
+
+export const SEMANTIC_VERSION = 'v[0-9]*\\.[0-9]*\\.[0-9]*';
+
+// todo: git describe --tags `git rev-list --tags="v[0-9]*\.[0-9]*\.[0-9]*" --max-count=1`
+export function getLastTagSync(match?: string) {
+    let tagsOption = '--tags';
+    if (match) {
+        tagsOption = `--tags="${match}"`;
+    }
+    const ref = execSync(`git rev-list --max-count=1 ${tagsOption}`, { encoding: 'utf8' });
+    const tag = execSync(`git describe --tags ${ref}`, { encoding: 'utf8' });
+    return tag;
+}
 
 /**
- * This is hello function
- * @returns result string
+ * todo: make it real async
  */
-export function hello(greet?: string) {
-    return `${greet} world`;
+export async function getLastTag() {
+    const result = getLastTagSync();
+    return result;
 }
