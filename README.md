@@ -1,4 +1,5 @@
 # git-last-tag
 
 ## TODO
-* Unit tests
+
+-   Unit tests
