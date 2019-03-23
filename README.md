@@ -1,27 +1,5 @@
-# node-package-starter
+# git-last-tag
 
-## Table of Contents
+## TODO
 
--   [Install](#install)
-
-    -   -   [Frontend](#frontend)
-
--   [Changelog](#changelog)
-
--   [License](#license)
-
-## Install
-
-    git clone https://github.com/unlight/node-package-starte
-
-#### Frontend
-
-    npm run setupfrontend
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md)
-
-## License
-
-[MIT](LICENSE) © 2019
+-   Unit tests
