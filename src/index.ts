@@ -14,7 +14,7 @@ export function getLastTagSync(match?: string) {
 /**
  * todo: make it real async
  */
-export async function getLastTag() {
-    const result = getLastTagSync();
+export async function getLastTag(match?: string) {
+    const result = getLastTagSync(match);
     return result;
 }
