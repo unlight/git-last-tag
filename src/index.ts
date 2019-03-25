@@ -8,7 +8,8 @@ export function getLastTagSync(match?: string) {
         tagsOption = `--tags="${match}"`;
     }
     const ref = execSync(`git rev-list --max-count=1 ${tagsOption}`, { encoding: 'utf8' });
-    return execSync(`git describe --tags ${ref}`, { encoding: 'utf8' });
+    const result = execSync(`git describe --tags ${ref}`, { encoding: 'utf8' });
+    return result.trim();
 }
 
 /**
